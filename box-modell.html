@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box-Modell</title>
+    <style>
+        /* Grundlegende Seitengestaltung */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Container für die Beispiele */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Box-Modell Visualisierung */
+        .box-model-container {
+            margin: 30px auto;
+            width: 500px;
+            height: 300px;
+            position: relative;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .margin-box {
+            background-color: #ffeb3b;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .border-box {
+            background-color: #ff9800;
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .padding-box {
+            background-color: #4caf50;
+            width: 75%;
+            height: 75%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-box {
+            background-color: #2196f3;
+            width: 70%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Labels */
+        .label {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .margin-label {
+            top: 5px;
+            left: 5px;
+        }
+
+        .border-label {
+            top: 15%;
+            left: 15%;
+        }
+
+        .padding-label {
+            top: 30%;
+            left: 30%;
+        }
+
+        .content-label {
+            top: 45%;
+            left: 45%;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        /* Beispiel-Boxen */
+        .example-section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .example-boxes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            background-color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .box-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Spezifische Box-Stile */
+        .box1 {
+            padding: 20px;
+            border: 2px solid #2196f3;
+            margin: 10px;
+        }
+
+        .box2 {
+            padding: 30px 10px;  /* oben/unten, links/rechts */
+            border: 5px dashed #4caf50;
+            margin: 20px 5px;    /* oben/unten, links/rechts */
+        }
+
+        .box3 {
+            padding: 10px 20px 30px 40px;  /* oben, rechts, unten, links */
+            border: 3px dotted #ff9800;
+            margin: 5px 15px 25px 10px;    /* oben, rechts, unten, links */
+        }
+
+        /* Interaktive Box */
+        .interactive-box {
+            width: 200px;
+            height: 200px;
+            background-color: #e1f5fe;
+            margin: 30px auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .control-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="range"] {
+            width: 100px;
+        }
+
+        .value-display {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* Code-Anzeige */
+        .code-display {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Box-Modell</h1>
+        <p>
+            Das CSS Box-Modell beschreibt, wie Elemente auf einer Webseite dargestellt werden. 
+            Jedes Element wird als rechteckige Box betrachtet, die aus vier Teilen besteht:
+        </p>
+
+        <!-- Box-Modell Visualisierung -->
+        <div class="box-model-container">
+            <span class="label margin-label">Margin (Außenabstand)</span>
+            <div class="margin-box">
+                <span class="label border-label">Border (Rahmen)</span>
+                <div class="border-box">
+                    <span class="label padding-label">Padding (Innenabstand)</span>
+                    <div class="padding-box">
+                        <span class="label content-label">Content (Inhalt)</span>
+                        <div class="content-box">
+                            Der eigentliche Inhalt des Elements (Text, Bilder, etc.)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Die Bestandteile des Box-Modells</h2>
+        <ul>
+            <li><strong>Content (Inhalt):</strong> Der eigentliche Inhalt des Elements, wie Text oder Bilder.</li>
+            <li><strong>Padding (Innenabstand):</strong> Der Abstand zwischen dem Inhalt und dem Rahmen.</li>
+            <li><strong>Border (Rahmen):</strong> Der Rahmen um das Element herum.</li>
+            <li><strong>Margin (Außenabstand):</strong> Der Abstand zwischen dem Rahmen und anderen Elementen.</li>
+        </ul>
+
+        <!-- Beispiele für verschiedene Box-Modell-Eigenschaften -->
+        <div class="example-section">
+            <h2>Beispiele für Box-Modell-Eigenschaften</h2>
+            
+            <div class="example-boxes">
+                <div class="box box1">
+                    <div class="box-title">Box 1</div>
+                    <div>padding: 20px</div>
+                    <div>border: 2px solid</div>
+                    <div>margin: 10px</div>
+                </div>
+                
+                <div class="box box2">
+                    <div class="box-title">Box 2</div>
+                    <div>padding: 30px 10px</div>
+                    <div>border: 5px dashed</div>
+                    <div>margin: 20px 5px</div>
+                </div>
+                
+                <div class="box box3">
+                    <div class="box-title">Box 3</div>
+                    <div>padding: 10px 20px 30px 40px</div>
+                    <div>border: 3px dotted</div>
+                    <div>margin: 5px 15px 25px 10px</div>
+                </div>
+            </div>
+
+            <h3>CSS-Syntax für Box-Modell-Eigenschaften</h3>
+            <div class="code-display">
+                /* Einzelne Werte für alle Seiten */<br>
+                padding: 20px;<br>
+                margin: 10px;<br>
+                <br>
+                /* Zwei Werte: oben/unten, links/rechts */<br>
+                padding: 30px 10px;<br>
+                margin: 20px 5px;<br>
+                <br>
+                /* Vier Werte: oben, rechts, unten, links (im Uhrzeigersinn) */<br>
+                padding: 10px 20px 30px 40px;<br>
+                margin: 5px 15px 25px 10px;<br>
+                <br>
+                /* Einzelne Seiten gezielt ansprechen */<br>
+                padding-top: 10px;<br>
+                padding-right: 20px;<br>
+                padding-bottom: 30px;<br>
+                padding-left: 40px;<br>
+            </div>
+        </div>
+
+        <!-- Interaktive Box zum Experimentieren -->
+        <div class="example-section">
+            <h2>Experimentiere mit dem Box-Modell</h2>
+            <p>Verwende die Schieberegler, um die Box-Modell-Eigenschaften zu ändern:</p>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <div class="control-label">Padding</div>
+                    <input type="range" id="padding-slider" min="0" max="50" value="10">
+                    <div class="value-display" id="padding-value">10px</div>
+                </div>
+                
+                <div class="control-group">
+                    <div class="control-label">Border</div>
+                    <input type="range" id="border-slider" min="0" max="20" value="2">
+                    <div class="value-display" id="border-value">2px</div>
+                </div>
+                
+                <div class="control-group">
+                    <div class="control-label">Margin</div>
+                    <input type="range" id="margin-slider" min="0" max="50" value="20">
+                    <div class="value-display" id="margin-value">20px</div>
+                </div>
+            </div>
+            
+            <div class="interactive-box" id="interactive-box">
+                Box-Modell
+            </div>
+            
+            <div class="code-display" id="box-code">
+                .box {<br>
+                &nbsp;&nbsp;padding: 10px;<br>
+                &nbsp;&nbsp;border: 2px solid #2196f3;<br>
+                &nbsp;&nbsp;margin: 20px;<br>
+                }
+            </div>
+        </div>
+
+        <!-- Übungen -->
+        <div class="example-section">
+            <h2>Übungen zum Box-Modell</h2>
+            <ol>
+                <li>Erstelle eine Box mit einem Inhalt deiner Wahl und experimentiere mit verschiedenen Padding-, Border- und Margin-Werten.</li>
+                <li>Erstelle zwei nebeneinander liegende Boxen und passe die Margins an, um den Abstand zwischen ihnen zu kontrollieren.</li>
+                <li>Erstelle eine zentrierte Box mit fester Breite, indem du <code>margin: 0 auto;</code> verwendest.</li>
+                <li>Experimentiere mit verschiedenen Border-Stilen: <code>solid</code>, <code>dashed</code>, <code>dotted</code>, <code>double</code>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript für die interaktive Box
+        const paddingSlider = document.getElementById('padding-slider');
+        const borderSlider = document.getElementById('border-slider');
+        const marginSlider = document.getElementById('margin-slider');
+        
+        const paddingValue = document.getElementById('padding-value');
+        const borderValue = document.getElementById('border-value');
+        const marginValue = document.getElementById('margin-value');
+        
+        const interactiveBox = document.getElementById('interactive-box');
+        const boxCode = document.getElementById('box-code');
+        
+        function updateBox() {
+            const paddingVal = paddingSlider.value;
+            const borderVal = borderSlider.value;
+            const marginVal = marginSlider.value;
+            
+            interactiveBox.style.padding = `${paddingVal}px`;
+            interactiveBox.style.border = `${borderVal}px solid #2196f3`;
+            interactiveBox.style.margin = `${marginVal}px auto`;
+            
+            paddingValue.textContent = `${paddingVal}px`;
+            borderValue.textContent = `${borderVal}px`;
+            marginValue.textContent = `${marginVal}px`;
+            
+            boxCode.innerHTML = `.box {<br>&nbsp;&nbsp;padding: ${paddingVal}px;<br>&nbsp;&nbsp;border: ${borderVal}px solid #2196f3;<br>&nbsp;&nbsp;margin: ${marginVal}px;<br>}`;
+        }
+        
+        paddingSlider.addEventListener('input', updateBox);
+        borderSlider.addEventListener('input', updateBox);
+        marginSlider.addEventListener('input', updateBox);
+        
+        // Initialisierung
+        updateBox();
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIV-Element Übung</title>
+    <style>
+        /* Die CSS-Klasse "city" gestaltet alle Elemente, die diese Klasse haben */
+        .city {
+            background-color: tomato;  /* Hintergrundfarbe */
+            color: white;              /* Textfarbe */
+            border: 2px solid black;   /* Rahmen: Dicke, Stil, Farbe */
+            margin: 20px;              /* Außenabstand zu anderen Elementen */
+            padding: 20px;             /* Innenabstand zwischen Inhalt und Rahmen */
+        }
+
+        /* Beispiel für eine zusätzliche Klasse */
+        .highlight {
+            background-color: #4CAF50;  /* Grüne Hintergrundfarbe */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Schatten für 3D-Effekt */
+        }
+
+        /* Beispiel für Zentrierung eines Block-Elements */
+        .centered-container {
+            width: 80%;               /* Breite des Containers */
+            margin: 0 auto;           /* Zentrierung: 0 oben/unten, auto links/rechts */
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;       /* Abgerundete Ecken */
+        }
+
+        /* Überschrift innerhalb des Containers zentrieren */
+        .centered-container h1 {
+            text-align: center;       /* Text zentrieren */
+        }
+    </style>
+</head>
+<body>
+    <!-- Zentrierter Container als Beispiel für Block-Element und Zentrierung -->
+    <div class="centered-container">
+        <h1>Städte der Welt</h1>
+        <p>Beispiel für Block-Elemente mit DIV</p>
+    </div>
+
+    <!-- Jedes div.city ist ein Block-Element und nimmt die volle Breite ein -->
+    <div class="city">
+        <h2>London</h2>
+        <p>London ist die Hauptstadt von England.</p>
+    </div>
+
+    <div class="city">
+        <h2>Paris</h2>
+        <p>Paris ist die Hauptstadt von Frankreich.</p>
+    </div>
+
+    <div class="city">
+        <h2>Tokyo</h2>
+        <p>Tokyo ist die Hauptstadt von Japan.</p>
+    </div>
+
+    <!-- Beispiel für eine Stadt mit zusätzlicher Klasse "highlight" -->
+    <div class="city highlight">
+        <h2>Berlin</h2>
+        <p>Berlin ist die Hauptstadt von Deutschland.</p>
+    </div>
+
+    <!-- 
+    ÜBUNGEN:
+    1. Füge eine weitere Stadt hinzu
+    2. Erstelle eine neue CSS-Klasse und wende sie auf eine Stadt an
+    3. Ändere die Hintergrundfarbe für eine bestimmte Stadt
+    4. Experimentiere mit verschiedenen Margin- und Padding-Werten
+    -->
+</body>
+</html>

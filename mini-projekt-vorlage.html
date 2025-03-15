@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Profilseite</title>
+    <style>
+        /* Grundlegende Seitengestaltung */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Container für den gesamten Inhalt */
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto; /* Zentrierung mit margin: 0 auto */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header-Bereich */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Navigationsbereich */
+        nav {
+            background-color: #333;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            padding: 15px 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hauptinhalt */
+        main {
+            padding: 20px;
+        }
+
+        /* Abschnitte */
+        section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Überschriften */
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+
+        /* Hervorhebungen mit span */
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .important {
+            background-color: #ffffcc;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .code {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        /* Profilbild */
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Rundes Bild */
+            border: 3px solid #4CAF50;
+            margin: 0 auto 20px;
+            display: block;
+            background-color: #ddd; /* Platzhalter-Farbe */
+        }
+
+        /* Fähigkeiten-Liste */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background-color: #e0f2e0;
+            color: #4CAF50;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        /* Fußbereich */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Kontaktformular */
+        .contact-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container für den gesamten Inhalt -->
+    <div class="container">
+        <!-- Header: Kopfbereich der Seite -->
+        <header>
+            <h1>Mein Profil</h1>
+            <p>Willkommen auf meiner persönlichen Webseite</p>
+        </header>
+
+        <!-- Navigation: Navigationslinks -->
+        <nav>
+            <ul>
+                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#hobbys">Hobbys</a></li>
+                <li><a href="#faehigkeiten">Fähigkeiten</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main: Hauptinhalt der Seite -->
+        <main>
+            <!-- Section: Über mich -->
+            <section id="ueber-mich">
+                <h2>Über mich</h2>
+                
+                <!-- Platzhalter für Profilbild -->
+                <div class="profile-image"></div>
+                
+                <p>
+                    Hallo! Mein Name ist <span class="highlight">Dein Name</span>. 
+                    Ich bin <span class="important">X Jahre</span> alt und besuche die 
+                    <span class="highlight">Name deiner Schule</span>.
+                </p>
+                
+                <p>
+                    Hier kannst du mehr über dich schreiben. Was macht dich besonders? 
+                    Was sind deine Interessen? Was möchtest du später einmal werden?
+                </p>
+            </section>
+
+            <!-- Section: Hobbys -->
+            <section id="hobbys">
+                <h2>Meine Hobbys</h2>
+                <p>In meiner Freizeit beschäftige ich mich gerne mit:</p>
+                
+                <ul>
+                    <li>Hobby 1</li>
+                    <li>Hobby 2</li>
+                    <li>Hobby 3</li>
+                    <li>Hobby 4</li>
+                </ul>
+                
+                <p>
+                    Mein Lieblingshobby ist <span class="highlight">Hobby X</span>, 
+                    weil ich dabei <span class="important">wichtiger Grund</span>.
+                </p>
+            </section>
+
+            <!-- Section: Fähigkeiten -->
+            <section id="faehigkeiten">
+                <h2>Meine Fähigkeiten</h2>
+                <p>Hier sind einige Dinge, die ich gut kann:</p>
+                
+                <div class="skills">
+                    <div class="skill-tag">Fähigkeit 1</div>
+                    <div class="skill-tag">Fähigkeit 2</div>
+                    <div class="skill-tag">Fähigkeit 3</div>
+                    <div class="skill-tag">Fähigkeit 4</div>
+                    <div class="skill-tag">Fähigkeit 5</div>
+                </div>
+                
+                <h3>Meine Programmierkenntnisse</h3>
+                <p>
+                    Ich habe bereits Erfahrung mit <span class="code">HTML</span> und 
+                    <span class="code">CSS</span> gesammelt.
+                </p>
+            </section>
+
+            <!-- Section: Kontakt -->
+            <section id="kontakt">
+                <h2>Kontakt</h2>
+                <p>Du kannst mich über folgende Wege erreichen:</p>
+                
+                <p>
+                    E-Mail: <span class="highlight">deine-email@beispiel.de</span><br>
+                    Social Media: <span class="highlight">@dein_benutzername</span>
+                </p>
+                
+                <div class="contact-form">
+                    <h3>Kontaktformular</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-Mail:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Nachricht:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit">Nachricht senden</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer: Fußbereich der Seite -->
+        <footer>
+            <p>&copy; 2025 Meine Profilseite | Erstellt mit HTML und CSS</p>
+        </footer>
+    </div>
+
+    <!-- 
+    ÜBUNGEN:
+    1. Fülle die Platzhalter mit deinen eigenen Informationen aus
+    2. Füge ein eigenes Bild ein (ersetze den Platzhalter)
+    3. Ändere die Farben nach deinen Vorlieben
+    4. Füge weitere Abschnitte hinzu (z.B. Lieblingsbücher, Filme, etc.)
+    5. Experimentiere mit verschiedenen CSS-Eigenschaften
+    -->
+</body>
+</html>

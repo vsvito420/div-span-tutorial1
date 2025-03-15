@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPAN-Element Übung</title>
+    <style>
+        /* Grundlegende Seitengestaltung */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        /* Container für die Beispiele */
+        .example-container {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        /* Die Klasse "note" hebt Text rot hervor */
+        .note {
+            font-size: 120%;
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Die Klasse "highlight" hebt Text mit gelber Hintergrundfarbe hervor */
+        .highlight {
+            background-color: yellow;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        /* Die Klasse "code" formatiert Text wie Programmcode */
+        .code {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #0066cc;
+        }
+
+        /* Die Klasse "definition" für Fachbegriffe */
+        .definition {
+            color: blue;
+            font-style: italic;
+        }
+
+        /* Überschrift zentrieren */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inline-Elemente mit <span class="note">SPAN</span></h1>
+
+    <div class="example-container">
+        <h2>Beispiel 1: Hervorhebung von Text</h2>
+        <p>Dies ist ein <span class="note">wichtiger</span> Absatz mit hervorgehobenem Text.</p>
+        <p>Span-Elemente sind <span class="highlight">inline-Elemente</span>, die nur so viel Platz einnehmen, wie sie benötigen.</p>
+    </div>
+
+    <div class="example-container">
+        <h2>Beispiel 2: Mehrere Stile in einem Text</h2>
+        <p>
+            HTML verwendet <span class="definition">Tags</span>, um Elemente zu definieren.
+            Ein Tag beginnt mit <span class="code">&lt;</span> und endet mit <span class="code">&gt;</span>.
+            Zum Beispiel: <span class="code">&lt;span&gt;</span> ist ein <span class="highlight">inline-Element</span>.
+        </p>
+    </div>
+
+    <div class="example-container">
+        <h2>Beispiel 3: Unterschied zwischen SPAN und DIV</h2>
+        <p>
+            <span style="border: 1px solid red; padding: 2px;">Dieses SPAN-Element</span> ist ein Inline-Element und unterbricht nicht den Textfluss.
+        </p>
+        <p>
+            <div style="border: 1px solid blue; padding: 2px;">Dieses DIV-Element</div> ist ein Block-Element und beginnt immer auf einer neuen Zeile.
+        </p>
+    </div>
+
+    <div class="example-container">
+        <h2>Übungen:</h2>
+        <ol>
+            <li>Füge weitere hervorgehobene Wörter mit der Klasse "note" hinzu</li>
+            <li>Verwende die Klasse "highlight" für andere Wörter im Text</li>
+            <li>Erstelle eine neue Klasse für eine andere Art der Hervorhebung (z.B. unterstrichen)</li>
+            <li>Kombiniere mehrere Klassen in einem span-Element</li>
+        </ol>
+    </div>
+
+    <!-- Platz für eigene Übungen -->
+    <div class="example-container">
+        <h2>Deine Übung:</h2>
+        <p>
+            Hier kannst du mit verschiedenen span-Elementen und Klassen experimentieren.
+        </p>
+    </div>
+</body>
+</html>
