@@ -28,7 +28,7 @@
 
 ## Schritt 1: GitHub Repository forken
 1. Öffne GitHub Desktop
-2. Navigiere zum Repository: github.com/vsvito420/html-zimba
+2. Navigiere zum Repository: github.com/vsvito420/div-span-tutorial1
 3. Klicke auf "Fork this repository"
 4. Wähle einen lokalen Speicherort
 5. Klicke auf "Clone"
